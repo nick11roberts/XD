@@ -1,0 +1,8 @@
+tqdm
+tensorboardX
+easydict
+setproctitle
+observations
+unidecode
+fire
+matplotlib
