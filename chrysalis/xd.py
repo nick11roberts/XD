@@ -1,5 +1,6 @@
 import math
 import pdb
+import sys
 from copy import deepcopy
 from functools import partial
 from itertools import product
@@ -648,7 +649,7 @@ if __name__ == '__main__':
 
     batch, device = 2, 'cuda'
     with torch.no_grad():
-        for dims in range(1, 4):
+        for dims in range(1, int(sys.argv[1]) if len(sys.argv) == 2 else 1):
             for name, Op, slc in [
                                   ('Conv', Conv, lambda p: None),
                                   ('Pool', AvgPool, lambda p: [slice(None), slice(None)] + [slice(p, -p) if p else slice(None)]*dims),
